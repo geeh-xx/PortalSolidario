@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Resource name="jdbc/portalsolidario"
+	url="jdbc:mysql://localhost:3306/portalsolidario"
+	driverClassName="com.mysql.jdbc.Driver" username="root" password="93176425"
+	type="javax.sql.DataSource" maxActive="20" maxIdle="40" maxWait="10000" />
