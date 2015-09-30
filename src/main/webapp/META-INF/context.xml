@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Resource name="jdbc/portalsolidario" auth="Container"
-	url="jdbc:mysql://54.207.111.164:3306/bitnami_magento"
-	driverClassName="com.mysql.jdbc.Driver" username="root" password="bitnami1"
+	url="jdbc:mysql://localhost:3306/unibh"
+	driverClassName="com.mysql.jdbc.Driver" username="root" password="93176425"
 	type="javax.sql.DataSource" maxActive="100" maxIdle="40" maxWait="10000" />

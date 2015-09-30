@@ -1,6 +1,7 @@
 package br.com.portalsolidario.dao.utils;
 import java.io.IOException;
 
+import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
@@ -9,7 +10,7 @@ import javax.servlet.ServletResponse;
 
 import org.hibernate.SessionFactory;
 
-public class ConectionFilter implements javax.servlet.Filter {
+public class ConectionFilter implements Filter {
 
 	private SessionFactory sessionFactory;
 	 
