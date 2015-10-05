@@ -12,6 +12,8 @@ import br.com.portalsolidario.model.User;
 import br.com.portalsolidario.utils.Role;
 import br.com.portalsolidario.utils.GenerateValidation;
 import br.com.portalsolidario.utils.ManipulateDate;
+import br.com.portalsolidario.utils.ServiceFinder;
+import br.com.portalsolidario.utils.SimpleRegistrationService;
 import br.com.portalsolidario.utils.security.GenerateMD5;
  
 
@@ -34,19 +36,19 @@ public class UserBean {
     }
  
     public String save() {
- 
-        ProfileBusiness profileBusiness = new ProfileBusiness();
- 
-        user.setPassword(GenerateMD5.generate(user.getPassword()));
-        user.setValidation(GenerateValidation.keyValidation());
-        user.getPermissions().add(Role.ROLE_COMMON.getValue());
-        user.setActive(false);
-         
-        profile.setUser(user);
-        profile.setBirth(ManipulateDate.getDate(year, month, day));
- 
-        profileBusiness.save(profile);
-        return "/public/feedback_login";
+    	 ProfileBusiness profileBusiness = new ProfileBusiness();
+         user.setPassword(GenerateMD5.generate(user.getPassword()));
+         user.setValidation(GenerateValidation.keyValidation());
+         user.getPermissions().add(Role.ROLE_COMMON.getValue());
+         user.setActive(false);        
+         profile.setUser(user);
+         profile.setBirth(ManipulateDate.getDate(year, month, day));
+         profileBusiness.save(profile);
+       
+         SimpleRegistrationService mail = (SimpleRegistrationService) ServiceFinder.findBean("registrationService");
+         mail.register(profile);
+          
+         return "/public/feedback_login";
     }
  
     public User getUser() {
