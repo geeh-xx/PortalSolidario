@@ -43,7 +43,7 @@ public class SimpleRegistrationService {
 				model.put("context", Context.getContextPath());
 				String text = VelocityEngineUtils.mergeTemplateIntoString(
 						velocityEngine,
-						"br.com.portalsolidario.template/registration-confirmation.vm", model);
+						"br/com/portalsolidario/template/registration-confirmation.vm", model);
 				message.setText(text, true);
 			}
 		};

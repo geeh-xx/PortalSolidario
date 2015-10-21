@@ -14,9 +14,13 @@ public class Index {
 	}
 
 	public String getMessage() {
-		return "Hello World JSF!";
+		return "Bem Vindo!";
 	}
 
+	 public String login(){
+         return "/public/login.xhtml";
+  }
+	
 	public String register() {
 		return "/public/register.xhtml";
 	}
