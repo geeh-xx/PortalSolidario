@@ -4,6 +4,8 @@ import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
+import org.springframework.security.core.context.SecurityContextHolder;
+
 @RequestScoped
 @ManagedBean
 public class Index {
@@ -17,6 +19,11 @@ public class Index {
 		return "Bem Vindo!";
 	}
 
+	public String getUsuario(){
+		
+		return SecurityContextHolder.getContext().getAuthentication().getName();
+	}
+	
 	 public String login(){
          return "/public/login.xhtml";
   }

@@ -4,9 +4,19 @@
     xmlns:f="http://java.sun.com/jsf/core"
     xmlns:h="http://java.sun.com/jsf/html">
  
-<body>
-    admin
-    <br /><br /><br />
-    <a style="padding-right: 3px;" href="#{request.contextPath}/j_spring_security_logout">sair</a>    
-</body>
+<ui:composition template="/public/template_initial.xhtml">
+    <ui:define name="nav_bar">
+        <ui:include src="../public/top_bar_logado.xhtml"/>
+        <ui:include src="../public/search_bar.xhtml"/>
+    </ui:define>
+     
+    <ui:define name="container">
+        <div class="row">
+            <span>Bem vindo #{index.usuario}</span>            
+        </div>
+    </ui:define>    
+    <ui:define name="title">        
+            Administrativo       
+    </ui:define>
+</ui:composition>
 </html>
