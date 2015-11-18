@@ -6,17 +6,17 @@
  
 <ui:composition template="/public/template_initial.xhtml">
     <ui:define name="nav_bar">
-        <ui:include src="../public/top_bar_logado.xhtml"/>
-        <ui:include src="../public/search_bar.xhtml"/>
+        <ui:include src="top_bar_admin.xhtml"/>
     </ui:define>
      
     <ui:define name="container">
-        <div class="row">
+        <div class="row" style="padding-top: 100px;">
             <span>Bem vindo #{index.usuario}</span>            
         </div>
+
     </ui:define>    
     <ui:define name="title">        
-            Administrativo       
+            Entidade       
     </ui:define>
 </ui:composition>
 </html>

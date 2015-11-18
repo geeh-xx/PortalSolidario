@@ -21,6 +21,9 @@ public class Profile {
     private String email;
     private String sexy;
     private Date birth;
+    private String endereco;
+    private String codigoEntidade;
+    
  
     @OneToOne(cascade = CascadeType.ALL)
     @MapsId
@@ -82,4 +85,20 @@ public class Profile {
     public void setBirth(Date birth) {
         this.birth = birth;
     }
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getCodigoEntidade() {
+		return codigoEntidade;
+	}
+
+	public void setCodigoEntidade(String codigoEntidade) {
+		this.codigoEntidade = codigoEntidade;
+	}
 }
